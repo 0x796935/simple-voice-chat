@@ -78,11 +78,59 @@ public class GroupChatManager {
                 guiGraphics.pose().popMatrix();
             }
 
+            // Add player name rendering next to head (half-size text)
+            String playerName = state.getName();
+            if (playerName != null && !playerName.isEmpty()) {
+                // Calculate name position based on orientation
+                int nameX, nameY;
+                if (vertical) {
+                    nameX = posX < 0 ? -11 : 11; // Left or right of head
+                    nameY = posY < 0 ? -5 : 1;  // Vertically centered
+                } else {
+                    nameX = posX < 0 ? -8 - mc.font.width(playerName) : 11; // Left or right of head
+                    nameY = posY < 0 ? -5 - mc.font.lineHeight : 1; // Above or below head
+                }
+
+                // Prepare scaled sizes (we will draw the background/border in unscaled coordinates sized for the scaled text)
+                float textScale = 0.25F;
+                int textWidth = mc.font.width(playerName);
+                int textHeight = mc.font.lineHeight;
+                int drawWidth = Math.max(1, Math.round(textWidth * textScale));
+                int drawHeight = Math.max(1, Math.round(textHeight * textScale));
+
+                // If player is talking, add highlight border around name matching the head outline
+                if (client.getTalkCache().isTalking(state.getUuid())) {
+                    // Semi-transparent background for better readability (sized for scaled text)
+                    guiGraphics.fill(nameX - 2, nameY - 2, nameX + drawWidth + 2, nameY + drawHeight + 2, 0x80000000);
+
+                    // Highlight border - matching the style of TALK_OUTLINE (white)
+                    int borderColor = 0xFFFFFFFF;
+                    // Top border
+                    guiGraphics.fill(nameX - 2, nameY - 2, nameX + drawWidth + 2, nameY - 1, borderColor);
+                    // Bottom border
+                    guiGraphics.fill(nameX - 2, nameY + drawHeight + 1, nameX + drawWidth + 2, nameY + drawHeight + 2, borderColor);
+                    // Left border
+                    guiGraphics.fill(nameX - 2, nameY - 1, nameX - 1, nameY + drawHeight + 1, borderColor);
+                    // Right border
+                    guiGraphics.fill(nameX + drawWidth + 1, nameY - 1, nameX + drawWidth + 2, nameY + drawHeight + 1, borderColor);
+                }
+
+                // Draw the player name at half size using pose scaling
+                guiGraphics.pose().pushMatrix();
+                // Translate to name position and scale down
+                guiGraphics.pose().translate(nameX, nameY, 0F);
+                guiGraphics.pose().scale(textScale, textScale, 1F);
+                // Draw at 0,0 because we've translated to nameX/nameY already
+                guiGraphics.drawString(mc.font, playerName, 0, 0, 0xFFFFFFFF);
+                guiGraphics.pose().popMatrix();
+            }
+
             guiGraphics.pose().popMatrix();
         }
-
         guiGraphics.pose().popMatrix();
     }
+
+
 
     public static List<PlayerState> getGroupMembers() {
         return getGroupMembers(true);
