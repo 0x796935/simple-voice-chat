@@ -1,0 +1,68 @@
+{
+  "mappings": {
+    "de/maxhenkel/voicechat/mixin/AvatarRendererMixin": {
+      "Lnet/minecraft/client/renderer/SubmitNodeCollector;submitNameTag(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/phys/Vec3;ILnet/minecraft/network/chat/Component;ZIDLnet/minecraft/client/renderer/state/CameraRenderState;)V": "Lnet/minecraft/class_11659;method_73482(Lnet/minecraft/class_4587;Lnet/minecraft/class_243;ILnet/minecraft/class_2561;ZIDLnet/minecraft/class_12075;)V",
+      "submitNameTag(Lnet/minecraft/client/renderer/entity/state/AvatarRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/CameraRenderState;)V": "Lnet/minecraft/class_1007;method_4213(Lnet/minecraft/class_10055;Lnet/minecraft/class_4587;Lnet/minecraft/class_11659;Lnet/minecraft/class_12075;)V"
+    },
+    "de/maxhenkel/voicechat/mixin/ConnectionAccessor": {
+      "channel": "field_11651:Lio/netty/channel/Channel;"
+    },
+    "de/maxhenkel/voicechat/mixin/IntegratedServerMixin": {
+      "publishServer": "Lnet/minecraft/class_1132;method_3763(Lnet/minecraft/class_1934;ZI)Z"
+    },
+    "de/maxhenkel/voicechat/mixin/KeyboardMixin": {
+      "Lnet/minecraft/client/Minecraft;getWindow()Lcom/mojang/blaze3d/platform/Window;": "Lnet/minecraft/class_310;method_22683()Lnet/minecraft/class_1041;",
+      "keyPress": "Lnet/minecraft/class_309;method_1466(JILnet/minecraft/class_11908;)V"
+    },
+    "de/maxhenkel/voicechat/mixin/MinecraftMixin": {
+      "disconnect(Lnet/minecraft/client/gui/screens/Screen;Z)V": "Lnet/minecraft/class_310;method_18096(Lnet/minecraft/class_437;Z)V",
+      "handleKeybinds": "Lnet/minecraft/class_310;method_1508()V"
+    },
+    "de/maxhenkel/voicechat/mixin/MouseMixin": {
+      "onButton": "Lnet/minecraft/class_312;method_1601(JLnet/minecraft/class_11910;I)V"
+    },
+    "de/maxhenkel/voicechat/mixin/PlayerEntryMixin": {
+      "<init>": "Lnet/minecraft/class_5519;<init>(Lnet/minecraft/class_310;Lnet/minecraft/class_5522;Ljava/util/UUID;Ljava/lang/String;Ljava/util/function/Supplier;Z)V",
+      "Lnet/minecraft/client/gui/components/Button;render(Lnet/minecraft/client/gui/GuiGraphics;IIF)V": "Lnet/minecraft/class_4185;method_25394(Lnet/minecraft/class_332;IIF)V",
+      "renderContent": "Lnet/minecraft/class_5519;method_25343(Lnet/minecraft/class_332;IIZF)V"
+    },
+    "de/maxhenkel/voicechat/mixin/PlayerManagerMixin": {
+      "placeNewPlayer": "Lnet/minecraft/class_3324;method_14570(Lnet/minecraft/class_2535;Lnet/minecraft/class_3222;Lnet/minecraft/class_8792;)V",
+      "remove": "Lnet/minecraft/class_3324;method_14611(Lnet/minecraft/class_3222;)V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "de/maxhenkel/voicechat/mixin/AvatarRendererMixin": {
+        "Lnet/minecraft/client/renderer/SubmitNodeCollector;submitNameTag(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/phys/Vec3;ILnet/minecraft/network/chat/Component;ZIDLnet/minecraft/client/renderer/state/CameraRenderState;)V": "Lnet/minecraft/class_11659;method_73482(Lnet/minecraft/class_4587;Lnet/minecraft/class_243;ILnet/minecraft/class_2561;ZIDLnet/minecraft/class_12075;)V",
+        "submitNameTag(Lnet/minecraft/client/renderer/entity/state/AvatarRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/CameraRenderState;)V": "Lnet/minecraft/class_1007;method_4213(Lnet/minecraft/class_10055;Lnet/minecraft/class_4587;Lnet/minecraft/class_11659;Lnet/minecraft/class_12075;)V"
+      },
+      "de/maxhenkel/voicechat/mixin/ConnectionAccessor": {
+        "channel": "field_11651:Lio/netty/channel/Channel;"
+      },
+      "de/maxhenkel/voicechat/mixin/IntegratedServerMixin": {
+        "publishServer": "Lnet/minecraft/class_1132;method_3763(Lnet/minecraft/class_1934;ZI)Z"
+      },
+      "de/maxhenkel/voicechat/mixin/KeyboardMixin": {
+        "Lnet/minecraft/client/Minecraft;getWindow()Lcom/mojang/blaze3d/platform/Window;": "Lnet/minecraft/class_310;method_22683()Lnet/minecraft/class_1041;",
+        "keyPress": "Lnet/minecraft/class_309;method_1466(JILnet/minecraft/class_11908;)V"
+      },
+      "de/maxhenkel/voicechat/mixin/MinecraftMixin": {
+        "disconnect(Lnet/minecraft/client/gui/screens/Screen;Z)V": "Lnet/minecraft/class_310;method_18096(Lnet/minecraft/class_437;Z)V",
+        "handleKeybinds": "Lnet/minecraft/class_310;method_1508()V"
+      },
+      "de/maxhenkel/voicechat/mixin/MouseMixin": {
+        "onButton": "Lnet/minecraft/class_312;method_1601(JLnet/minecraft/class_11910;I)V"
+      },
+      "de/maxhenkel/voicechat/mixin/PlayerEntryMixin": {
+        "<init>": "Lnet/minecraft/class_5519;<init>(Lnet/minecraft/class_310;Lnet/minecraft/class_5522;Ljava/util/UUID;Ljava/lang/String;Ljava/util/function/Supplier;Z)V",
+        "Lnet/minecraft/client/gui/components/Button;render(Lnet/minecraft/client/gui/GuiGraphics;IIF)V": "Lnet/minecraft/class_4185;method_25394(Lnet/minecraft/class_332;IIF)V",
+        "renderContent": "Lnet/minecraft/class_5519;method_25343(Lnet/minecraft/class_332;IIZF)V"
+      },
+      "de/maxhenkel/voicechat/mixin/PlayerManagerMixin": {
+        "placeNewPlayer": "Lnet/minecraft/class_3324;method_14570(Lnet/minecraft/class_2535;Lnet/minecraft/class_3222;Lnet/minecraft/class_8792;)V",
+        "remove": "Lnet/minecraft/class_3324;method_14611(Lnet/minecraft/class_3222;)V"
+      }
+    }
+  }
+}

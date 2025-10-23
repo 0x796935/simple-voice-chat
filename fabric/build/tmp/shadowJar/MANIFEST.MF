@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: voicechat-api-2.6.0.jar voicechat-fabric-1.21.10-2.6.6-dev.j
+ ar voicechat-fabric-1.21.10-2.6.6-dev.jar configbuilder-2.1.0.jar Conce
+ ntus-1.0.1.jar opus4j-2.1.3.jar rnnoise4j-2.1.3.jar lame4j-2.1.5.jar sp
+ eex4j-1.0.3.jar native-utils-1.0.2.jar
+
